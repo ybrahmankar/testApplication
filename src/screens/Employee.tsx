@@ -52,9 +52,18 @@ const Employee = ({navigation}:any) => {
   };
 
  const  updateData = async ()=>{
-    let arr = data
-    arr = [...arr,{name: name, age: age, address: add}]
-    await storeData(arr)
+if(data)
+{
+  let arr = data
+  arr = [...arr,{name: name, age: age, address: add}]
+  await storeData(arr)
+
+}else{
+  let arr = []
+  arr = [...arr,{name: name, age: age, address: add}]
+  await storeData(arr)
+
+}
   }
 
 
